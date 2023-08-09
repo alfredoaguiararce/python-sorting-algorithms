@@ -14,3 +14,20 @@ class Algorithms:
                 if arr[j] > arr[j+1]:
                     arr[j], arr[j+1] = arr[j+1], arr[j]
                     yield arr
+
+    @staticmethod
+    def selection_sort(arr):
+        """
+        The function implements the selection sort algorithm to sort an array in ascending order.
+        
+        :param arr: The parameter "arr" is a list of elements that you want to sort using the selection
+        sort algorithm
+        """
+        n = len(arr)
+        for i in range(n):
+            min_idx = i
+            for j in range(i+1, n):
+                if arr[j] < arr[min_idx]:
+                    min_idx = j
+            arr[i], arr[min_idx] = arr[min_idx], arr[i]
+            yield arr

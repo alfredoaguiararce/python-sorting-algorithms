@@ -30,7 +30,7 @@ def main():
     st.title("Visualización de Algoritmos de Ordenamiento")
 
     algorithms = Algorithms()
-    algorithm = st.selectbox("Selecciona un algoritmo:", ["bubble_sort"])
+    algorithm = st.selectbox("Selecciona un algoritmo:", ["bubble_sort", "selection_sort"])
     numbers = st.text_input("Ingresa una lista de números separados por comas:")
 
     if st.button("Ordenar"):
