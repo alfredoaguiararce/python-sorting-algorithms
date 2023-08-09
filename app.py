@@ -1,11 +1,7 @@
-import matplotlib
-matplotlib.use("TkAgg")  # O "Qt5Agg" si prefieres
-
 import streamlit as st
-import matplotlib.pyplot as plt
 import time
 
-from algoritms import Algorithms
+from algorithms import Algorithms  
 
 def animate_sorting(algorithm, arr):
     """
@@ -24,13 +20,13 @@ def animate_sorting(algorithm, arr):
     
     for step in algorithm(arr.copy()):
         chart.bar_chart(step)
-        time.sleep(0.01/len(arr)) 
+        time.sleep(0.1) 
 
 def main():
     st.title("Visualización de Algoritmos de Ordenamiento")
 
     algorithms = Algorithms()
-    algorithm = st.selectbox("Selecciona un algoritmo:", ["bubble_sort", "selection_sort"])
+    algorithm = st.selectbox("Selecciona un algoritmo:", ["bubble_sort", "selection_sort", "merge_sort"])
     numbers = st.text_input("Ingresa una lista de números separados por comas:")
 
     if st.button("Ordenar"):
